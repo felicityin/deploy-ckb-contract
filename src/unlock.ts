@@ -107,7 +107,7 @@ async function unlockCell() {
 async function getAlwaysSuccessCells(): Promise<Cell[]> {
   // always-success cell: 
   // https://pudge.explorer.nervos.org/transaction/0x36ae7d696485959c0ba867ba6fb0cd1abc0fdc2cc945c3065fa872195cc701bd
-  const typeId: Script = {
+  const alwaysSuccess: Script = {
     code_hash: '0xb4bb8275ee64cbe0c99900cd84d5366baccac55340fc6b499f1ba359318d77b9',
     hash_type: 'type',
     args: '0x',
@@ -116,8 +116,8 @@ async function getAlwaysSuccessCells(): Promise<Cell[]> {
   const cell: Cell = {
     cell_output: {
       capacity: '0x37e11d600',  // 150 CKB
-      lock: typeId,
-      type: typeId,
+      lock: alwaysSuccess,
+      type: alwaysSuccess,
     },
     data: '0x',
     out_point: {
