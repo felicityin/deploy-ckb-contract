@@ -26,3 +26,9 @@ Usage 4. Use the upgraded always-success contract to unlock the cell in Usage 2.
 ts-node src/unlock.ts
 ```
 example: https://pudge.explorer.nervos.org/transaction/0x9e736ca07372cf1be07a8c2c388190f6b02f06174da8b8592fd9c1e3d85e46ae
+
+Usage 5. Deploy a contract binary with multisig address and type id type script.
+```
+ts-node src/deploy-multisig.ts
+```
+example: https://pudge.explorer.nervos.org/transaction/0xdf494ca1d3c698b5e96d2d8c1669b432735fd226d4b53825f04bd8ddb8c01a2d
