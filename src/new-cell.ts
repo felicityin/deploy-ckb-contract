@@ -27,7 +27,7 @@ const CKB_INDEXER_URL = "https://testnet.ckbapp.dev/indexer";
 
 const NEW_CELL_CAPAPCITY = new Amount('150', AmountUnit.ckb);
 
-async function deployNewCell() {
+async function main() {
   config.initializeConfig(config.predefined.AGGRON4);
 
   const args = privateKeyToBlake160(PRIVATE_KEY);
@@ -146,4 +146,4 @@ async function collectLockOnlyCells(address: string, minCkb: string): Promise<Ce
   );
 }
 
-deployNewCell().then(console.log, console.error);
+main().then(console.log, console.error);

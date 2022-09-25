@@ -11,20 +11,20 @@ import { config, Indexer, RPC } from "@ckb-lumos/lumos";
 import { prepareSigningEntries } from "@ckb-lumos/common-scripts/lib/helper";
 import { calculateFee, getTransactionSize } from './helpers/tx'
 
-// address: https://ckb.tools/generator
-// faucet: https://faucet.nervos.org
-const PRIVATE_KEY =
-  "0x13b08bb054d5dd04013156dced8ba2ce4d8cc5973e10d905a228ea1abc267e60";
 const CKB_URL = "https://testnet.ckbapp.dev";
 const CKB_INDEXER_URL = "https://testnet.ckbapp.dev/indexer";
 
+// address: https://ckb.tools/generator
+// faucet: https://faucet.nervos.org
+// const PRIVATE_KEY =
+//   "0x13b08bb054d5dd04013156dced8ba2ce4d8cc5973e10d905a228ea1abc267e60";
 const FELICITY_LOCK: Script = {
   code_hash: '0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8',
   hash_type: 'type',
   args: '0xcf055e9d2d50fd94120fa6d981728a9be55bff3b',
 }
 
-async function unlockCell() {
+async function main() {
   config.initializeConfig(config.predefined.AGGRON4);
 
   let txSkeleton = TransactionSkeleton({ cellProvider: new Indexer(CKB_INDEXER_URL, CKB_URL) });
@@ -129,4 +129,4 @@ async function getAlwaysSuccessCells(): Promise<Cell[]> {
   return [cell];
 }
 
-unlockCell().then(console.log, console.error);
+main().then(console.log, console.error);
